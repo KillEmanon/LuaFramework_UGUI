@@ -15,7 +15,7 @@ namespace LuaFramework {
         public static System.Type GetType(string classname) {
             Assembly assb = Assembly.GetExecutingAssembly();  //.GetExecutingAssembly();
             System.Type t = null;
-            t = assb.GetType(classname); ;
+            t = assb.GetType(classname);
             if (t == null) {
                 t = assb.GetType(classname);
             }
@@ -50,6 +50,13 @@ namespace LuaFramework {
             return AppFacade.Instance.GetManager<SoundManager>(ManagerName.Sound);
         }
 
+        /// <summary>
+        /// 定位管理器
+        /// </summary>
+        /// <returns></returns>
+        public static LBSManager GetLBSManager() {
+            return AppFacade.Instance.GetManager<LBSManager>(ManagerName.LBS);
+        }
 
         /// <summary>
         /// pbc/pblua函数回调

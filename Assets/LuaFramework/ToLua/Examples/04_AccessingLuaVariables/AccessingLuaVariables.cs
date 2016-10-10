@@ -7,7 +7,7 @@ public class AccessingLuaVariables : MonoBehaviour
     private string script =
         @"
             print('Objs2Spawn is: '..Objs2Spawn)
-            var2read = 42
+            var2read = '42---宇宙真理!!!'
             varTable = {1,2,3,4,5}
             varTable.default = 1
             varTable.map = {}
@@ -45,10 +45,12 @@ public class AccessingLuaVariables : MonoBehaviour
         table.AddTable("newmap");
         LuaTable table1 = (LuaTable)table["newmap"];
         table1["name"] = "table1";
-        Debugger.Log("varTable.newmap name: {0}", table1["name"]);
+        table1["self"] = "天气不错";
+        Debugger.Log("varTable.newmap name: {0}|{1}", table1["name"], table1["self"]);
         table1.Dispose();
 
         table1 = table.GetMetaTable();
+        
 
         if (table1 != null)
         {

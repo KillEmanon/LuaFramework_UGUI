@@ -247,6 +247,9 @@ using System.IO;
 using LuaFramework;
 using LuaInterface;
 using UObject = UnityEngine.Object;
+using System;
+using UnityEngine.UI;
+using System.Reflection;
 
 namespace LuaFramework {
     public class ResourceManager : Manager {
@@ -268,7 +271,7 @@ namespace LuaFramework {
             uri = Util.DataPath + AppConst.AssetDir;
             if (!File.Exists(uri)) return;
             stream = File.ReadAllBytes(uri);
-            assetbundle = AssetBundle.CreateFromMemoryImmediate(stream);
+            assetbundle = AssetBundle.LoadFromMemory(stream);
             manifest = assetbundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
         }
 
@@ -281,6 +284,67 @@ namespace LuaFramework {
             return bundle.LoadAsset<T>(assetname);
         }
 
+        //获取指定sprite
+        public Sprite LoadSprite(string abName, string assetName, LuaFunction func)
+        {
+            abName = abName.ToLower();
+            Sprite sprite = LoadAsset<Sprite>(abName, assetName);
+
+            if (func != null && sprite != null)
+            {
+                func.Call(sprite);
+            }
+            else if (sprite == null)
+            {
+                Debug.Log("找不到这个素材daze|" + abName + "|" + assetName);
+            }
+
+            return sprite;
+        }
+
+        //指定获取GameObject
+        public GameObject LoadGO(string abName, string assetName, LuaFunction func)
+        {
+            abName = abName.ToLower();
+            GameObject go = LoadAsset<GameObject>(abName, assetName);
+
+            if (func != null && go != null)
+            {
+                func.Call(go);
+            }
+            else if(go == null)
+            {
+                Debug.Log("找不到这个素材daze|" + abName + "|" + assetName);
+            }
+
+            return go;
+        }
+
+        //获取资源,特别不靠谱的方法，骨瘦如柴，完全没有健壮性(但是方便)
+        public void GenLoadAsset(string type, string abName, string assetName, LuaFunction func)
+        {
+            var t = Type.GetType(type);
+
+            if(t == null)
+            {
+                Debug.LogError(string.Format("{0}类型不存在!!!", type));
+                return;
+            }
+
+            var classType = typeof(ResourceManager);
+
+            MethodInfo mi = classType.GetMethod("LoadAsset").MakeGenericMethod(t);
+            var temp = mi.Invoke(this, new object[] { abName, assetName });
+
+            if(temp == null)
+            {
+                Debug.Log("找不到这个素材daze|" + abName + "|" + assetName);
+            }
+
+            func.Call(Convert.ChangeType(temp, t));
+        }
+
+        //获取一堆素材
         public void LoadPrefab(string abName, string[] assetNames, LuaFunction func) {
             abName = abName.ToLower();
             List<UObject> result = new List<UObject>();
@@ -308,7 +372,7 @@ namespace LuaFramework {
                 LoadDependencies(abname);
 
                 stream = File.ReadAllBytes(uri);
-                bundle = AssetBundle.CreateFromMemoryImmediate(stream); //关联数据的素材绑定
+                bundle = AssetBundle.LoadFromMemory(stream); //关联数据的素材绑定
                 bundles.Add(abname, bundle);
             } else {
                 bundles.TryGetValue(abname, out bundle);

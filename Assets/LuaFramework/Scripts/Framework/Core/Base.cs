@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class Base : MonoBehaviour {
     private AppFacade m_Facade;
+    private GameManager m_GameMgr;
     private LuaManager m_LuaMgr;
     private ResourceManager m_ResMgr;
     private NetworkManager m_NetMgr;
@@ -12,6 +13,8 @@ public class Base : MonoBehaviour {
     private TimerManager m_TimerMgr;
     private ThreadManager m_ThreadMgr;
     private ObjectPoolManager m_ObjectPoolMgr;
+    private LBSManager m_LBSManager;
+    private UpdateManager m_UpdateManager;
 
     /// <summary>
     /// 注册消息
@@ -39,6 +42,18 @@ public class Base : MonoBehaviour {
                 m_Facade = AppFacade.Instance;
             }
             return m_Facade;
+        }
+    }
+
+    protected GameManager GameManager
+    {
+        get
+        {
+            if(m_GameMgr == null)
+            {
+                m_GameMgr = facade.GetManager<GameManager>(ManagerName.Game);
+            }
+            return m_GameMgr;
         }
     }
 
@@ -102,6 +117,30 @@ public class Base : MonoBehaviour {
                 m_ObjectPoolMgr = facade.GetManager<ObjectPoolManager>(ManagerName.ObjectPool);
             }
             return m_ObjectPoolMgr;
+        }
+    }
+
+    protected LBSManager LBSManager
+    {
+        get
+        {
+            if(m_LBSManager == null)
+            {
+                m_LBSManager = facade.GetManager<LBSManager>(ManagerName.LBS);
+            }
+            return m_LBSManager;
+        }
+    }
+
+    protected UpdateManager UpdateManager
+    {
+        get
+        {
+            if(m_UpdateManager == null)
+            {
+                m_UpdateManager = facade.GetManager<UpdateManager>(ManagerName.Update);
+            }
+            return m_UpdateManager;
         }
     }
 }

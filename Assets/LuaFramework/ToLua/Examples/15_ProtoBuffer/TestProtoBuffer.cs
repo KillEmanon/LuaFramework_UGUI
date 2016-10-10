@@ -38,7 +38,8 @@ public class TestProtoBuffer : LuaClient
             local msg = person_pb.Person()
             msg.id = 1024
             msg.name = 'foo'
-            msg.email = 'bar'                                    
+            --msg.email = 'bar'
+            msg.address = '广州市天河区'
             local pb_data = msg:SerializeToString()
             TestProtol.data = pb_data
         end
@@ -80,7 +81,7 @@ public class TestProtoBuffer : LuaClient
     protected override void OnLoadFinished()
     {                
         base.OnLoadFinished();
-        luaState.DoString(script, "TestProtoBuffer.cs");
+        luaState.DoString(script);
 
 #if !USE_PROTOBUF_NET
         LuaFunction func = luaState.GetFunction("Encoder");
@@ -91,6 +92,8 @@ public class TestProtoBuffer : LuaClient
         func.Call();
         func.Dispose();
         func = null;
+
+        Debug.Log("没有net");
 #else
         Person data = new Person();
         data.id = 2048;

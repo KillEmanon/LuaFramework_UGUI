@@ -8,8 +8,8 @@ public class TestCoroutine2 : LuaClient
     string script =
     @"
         function CoExample()            
-            WaitForSeconds(1)
-            print('WaitForSeconds end time: '.. UnityEngine.Time.time)            
+            WaitForSeconds(2)
+            print('WaitForSeconds end time: '.. UnityEngine.Time.time)
             WaitForFixedUpdate()
             print('WaitForFixedUpdate end frameCount: '..UnityEngine.Time.frameCount)
             WaitForEndOfFrame()
@@ -48,7 +48,6 @@ public class TestCoroutine2 : LuaClient
 
         function StopDelay()
 	        StopCoroutine(coDelay)
-            coDelay = nil
         end
     ";
 
@@ -56,7 +55,7 @@ public class TestCoroutine2 : LuaClient
     {
         base.OnLoadFinished();
 
-        luaState.DoString(script, "TestCoroutine2.cs");
+        luaState.DoString(script);
         LuaFunction func = luaState.GetFunction("TestCo");
         func.Call();
         func.Dispose();
@@ -66,29 +65,19 @@ public class TestCoroutine2 : LuaClient
     //屏蔽，例子不需要运行
     protected override void CallMain() { }
 
-    bool beStart = false;
-
     void OnGUI()
     {
         if (GUI.Button(new Rect(50, 50, 120, 45), "Start Counter"))
         {
-            if (!beStart)
-            {
-                beStart = true;
-                LuaFunction func = luaState.GetFunction("StartDelay");
-                func.Call();
-                func.Dispose();
-            }
+            LuaFunction func = luaState.GetFunction("StartDelay");
+            func.Call();
+            func.Dispose();
         }
         else if (GUI.Button(new Rect(50, 150, 120, 45), "Stop Counter"))
         {
-            if (beStart)
-            {
-                beStart = false;
-                LuaFunction func = luaState.GetFunction("StopDelay");
-                func.Call();
-                func.Dispose();
-            }
+            LuaFunction func = luaState.GetFunction("StopDelay");
+            func.Call();
+            func.Dispose();
         }
     }
 }

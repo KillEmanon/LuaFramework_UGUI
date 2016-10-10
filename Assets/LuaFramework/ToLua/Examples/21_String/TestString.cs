@@ -22,6 +22,18 @@ public class TestString : LuaClient
     end
 ";
 
+    public abstract class Test1
+    {
+        public virtual void Add() { }
+    }
+
+    public class Test2: Test1
+    {
+        public void Add(int i)
+        {
+        }
+    }
+
     protected override LuaFileUtils InitLoader()
     {
         return new LuaResLoader();

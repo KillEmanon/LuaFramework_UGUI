@@ -53,6 +53,7 @@ public class SocketClient {
         client.ReceiveTimeout = 1000;
         client.NoDelay = true;
         try {
+            Debug.Log("连接开始了,然而不知道能不能连得上" + host + ":" + port.ToString());
             client.BeginConnect(host, port, new AsyncCallback(OnConnect), null);
         } catch (Exception e) {
             Close(); Debug.LogError(e.Message);
@@ -63,6 +64,7 @@ public class SocketClient {
     /// 连接上服务器
     /// </summary>
     void OnConnect(IAsyncResult asr) {
+        Debug.Log("连上了");
         outStream = client.GetStream();
         client.GetStream().BeginRead(byteBuffer, 0, MAX_READ, new AsyncCallback(OnRead), null);
         NetworkManager.AddEvent(Protocal.Connect, new ByteBuffer());

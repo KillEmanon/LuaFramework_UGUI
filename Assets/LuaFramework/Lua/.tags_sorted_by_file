@@ -1,0 +1,482 @@
+...) return json_safe.new	3rd\cjson\test.lua	/^      function(...) return json_safe.new().decode(...) end, { "Oops" },$/;"	f
+append_escape	3rd\cjson\test.lua	/^    local function append_escape(code)$/;"	f
+gen_raw_octets	3rd\cjson\test.lua	/^local function gen_raw_octets()$/;"	f
+gen_utf16_escaped	3rd\cjson\test.lua	/^local function gen_utf16_escaped()$/;"	f
+load_testdata	3rd\cjson\test.lua	/^function load_testdata()$/;"	f
+test_decode_cycle	3rd\cjson\test.lua	/^function test_decode_cycle(filename)$/;"	f
+{ "Reset Lua CJSON configuration", function () json 	3rd\cjson\test.lua	/^    { "Reset Lua CJSON configuration", function () json = json.new() end },$/;"	f
+compare_values	3rd\cjson\util.lua	/^local function compare_values(val1, val2)$/;"	f
+file_load	3rd\cjson\util.lua	/^local function file_load(filename)$/;"	f
+file_save	3rd\cjson\util.lua	/^local function file_save(filename, data)$/;"	f
+is_array	3rd\cjson\util.lua	/^local function is_array(table)$/;"	f
+run_helper	3rd\cjson\util.lua	/^    local function run_helper(name, func, input)$/;"	f
+run_script	3rd\cjson\util.lua	/^local function run_script(script, env)$/;"	f
+run_test	3rd\cjson\util.lua	/^local function run_test(testname, func, input, should_work, output)$/;"	f
+run_test_group	3rd\cjson\util.lua	/^local function run_test_group(tests)$/;"	f
+run_test_summary	3rd\cjson\util.lua	/^local function run_test_summary()$/;"	f
+serialise_table	3rd\cjson\util.lua	/^local function serialise_table(value, indent, depth)$/;"	f
+serialise_value	3rd\cjson\util.lua	/^function serialise_value(value, indent, depth)$/;"	f
+status_line	3rd\cjson\util.lua	/^    local function status_line(name, status, value)$/;"	f
+base 	3rd\luabitop\bitbench.lua	/^base = bench("loop baseline", function(n)$/;"	f
+bench	3rd\luabitop\bitbench.lua	/^local function bench(name, t)$/;"	f
+bit.bswap	3rd\luabitop\bitbench.lua	/^  function bit.bswap(a)$/;"	f
+bit.rol	3rd\luabitop\bitbench.lua	/^  function bit.rol(a, b) return bor(shl(a, b), shr(a, 32-b)) end$/;"	f
+check_binop	3rd\luabitop\bittest.lua	/^local function check_binop(name, r)$/;"	f
+check_binop_range	3rd\luabitop\bittest.lua	/^local function check_binop_range(name, r, yb, ye)$/;"	f
+check_shift	3rd\luabitop\bittest.lua	/^local function check_shift(name, r)$/;"	f
+check_unop	3rd\luabitop\bittest.lua	/^local function check_unop(name, r)$/;"	f
+cksum	3rd\luabitop\bittest.lua	/^local function cksum(name, s, r)$/;"	f
+printx	3rd\luabitop\doc\api.html	/^function printx(x)$/;"	f
+xD	3rd\luabitop\doc\contact.html	/^function xD(s)$/;"	f
+bench	3rd\luabitop\md5test.lua	/^  local function bench()$/;"	f
+bswap	3rd\luabitop\md5test.lua	/^  function bswap(a)$/;"	f
+md5	3rd\luabitop\md5test.lua	/^local function md5(msg)$/;"	f
+rol	3rd\luabitop\md5test.lua	/^  function rol(a, b) return bor(shl(a, b), shr(a, 32-b)) end$/;"	f
+tohex	3rd\luabitop\md5test.lua	/^  function tohex(a)$/;"	f
+tr_f	3rd\luabitop\md5test.lua	/^local function tr_f(a, b, c, d, x, s)$/;"	f
+tr_g	3rd\luabitop\md5test.lua	/^local function tr_g(a, b, c, d, x, s)$/;"	f
+tr_h	3rd\luabitop\md5test.lua	/^local function tr_h(a, b, c, d, x, s)$/;"	f
+tr_i	3rd\luabitop\md5test.lua	/^local function tr_i(a, b, c, d, x, s)$/;"	f
+transform	3rd\luabitop\md5test.lua	/^local function transform(x, a1, b1, c1, d1)$/;"	f
+END	3rd\luabitop\msvcbuild.bat	/^:END$/;"	l
+FAIL	3rd\luabitop\msvcbuild.bat	/^:FAIL$/;"	l
+LUA_INC	3rd\luabitop\msvcbuild.bat	/^@set LUA_INC=-I ..$/;"	v
+LUA_LIB	3rd\luabitop\msvcbuild.bat	/^@set LUA_LIB=..\\lua51.lib$/;"	v
+MYCOMPILE	3rd\luabitop\msvcbuild.bat	/^@set MYCOMPILE=cl \/nologo \/MD \/O2 \/W3 \/c %LUA_INC%$/;"	v
+MYLINK	3rd\luabitop\msvcbuild.bat	/^@set MYLINK=link \/nologo$/;"	v
+MYMT	3rd\luabitop\msvcbuild.bat	/^@set MYMT=mt \/nologo$/;"	v
+END	3rd\luabitop\msvctest.bat	/^:END$/;"	l
+FAIL	3rd\luabitop\msvctest.bat	/^:FAIL$/;"	l
+LUA	3rd\luabitop\msvctest.bat	/^@set LUA=lua$/;"	v
+nsieve	3rd\luabitop\nsievebits.lua	/^local function nsieve(p, m)$/;"	f
+_add_nested_message	3rd\pbc\parser.lua	/^local function _add_nested_message(self, item)$/;"	f
+_enum_fullname	3rd\pbc\parser.lua	/^local function _enum_fullname(prefix, enum , all)$/;"	f
+_fix_extension	3rd\pbc\parser.lua	/^local function _fix_extension(namespace, ext, all)$/;"	f
+_fix_field	3rd\pbc\parser.lua	/^local function _fix_field(namespace , field, all)$/;"	f
+_fix_message	3rd\pbc\parser.lua	/^local function _fix_message(msg , all)$/;"	f
+_fix_typename	3rd\pbc\parser.lua	/^local function _fix_typename(file , all)$/;"	f
+_gen_fullname	3rd\pbc\parser.lua	/^local function _gen_fullname(file , all)$/;"	f
+_match_name	3rd\pbc\parser.lua	/^local function _match_name(namespace , n , all)$/;"	f
+_message_fullname	3rd\pbc\parser.lua	/^local function _message_fullname(prefix , msg , all)$/;"	f
+count_lines	3rd\pbc\parser.lua	/^local function count_lines(_,pos, parser_state)$/;"	f
+deal:enum	3rd\pbc\parser.lua	/^function deal:enum(v)$/;"	f
+deal:extend	3rd\pbc\parser.lua	/^function deal:extend(v)$/;"	f
+deal:extensions	3rd\pbc\parser.lua	/^function deal:extensions(v)$/;"	f
+deal:import	3rd\pbc\parser.lua	/^function deal:import(v)$/;"	f
+deal:message	3rd\pbc\parser.lua	/^function deal:message(v)$/;"	f
+deal:option	3rd\pbc\parser.lua	/^function deal:option(v)$/;"	f
+deal:package	3rd\pbc\parser.lua	/^function deal:package(v)$/;"	f
+fix	3rd\pbc\parser.lua	/^local function fix(r)$/;"	f
+insert	3rd\pbc\parser.lua	/^local function insert(tbl, k,v)$/;"	f
+local exception 	3rd\pbc\parser.lua	/^local exception = lpeg.Cmt( lpeg.Carg(1) , function ( _ , pos, parser_state)$/;"	f
+parser.parser	3rd\pbc\parser.lua	/^function parser.parser(text,filename)$/;"	f
+parser.register	3rd\pbc\parser.lua	/^function parser.register(fileset , path)$/;"	f
+parser_one	3rd\pbc\parser.lua	/^local function parser_one(text,filename)$/;"	f
+setoption	3rd\pbc\parser.lua	/^local function setoption(t, options)$/;"	f
+_R_meta:__index	3rd\pbc\protobuf.lua	/^function _R_meta:__index(key)$/;"	f
+__index 	3rd\pbc\protobuf.lua	/^	__index = function(self, key)$/;"	f
+__index 	3rd\pbc\protobuf.lua	/^	__index = function(t, key)$/;"	f
+_decode_type_meta:__index	3rd\pbc\protobuf.lua	/^function _decode_type_meta:__index(key)$/;"	f
+_encode_type_meta:__index	3rd\pbc\protobuf.lua	/^function _encode_type_meta:__index(key)$/;"	f
+_pattern_create	3rd\pbc\protobuf.lua	/^local function _pattern_create(pattern)$/;"	f
+_reader:bool	3rd\pbc\protobuf.lua	/^function _reader:bool(key)$/;"	f
+_reader:bool_repeated	3rd\pbc\protobuf.lua	/^function _reader:bool_repeated(key)$/;"	f
+_reader:int	3rd\pbc\protobuf.lua	/^function _reader:int(key)$/;"	f
+_reader:int32	3rd\pbc\protobuf.lua	/^function _reader:int32(key)$/;"	f
+_reader:int32_repeated	3rd\pbc\protobuf.lua	/^function _reader:int32_repeated(key)$/;"	f
+_reader:int52	3rd\pbc\protobuf.lua	/^function _reader:int52(key)$/;"	f
+_reader:int52_repeated	3rd\pbc\protobuf.lua	/^function _reader:int52_repeated(key)$/;"	f
+_reader:int64	3rd\pbc\protobuf.lua	/^function _reader:int64(key)$/;"	f
+_reader:int64_repeated	3rd\pbc\protobuf.lua	/^function _reader:int64_repeated(key)$/;"	f
+_reader:int_repeated	3rd\pbc\protobuf.lua	/^function _reader:int_repeated(key)$/;"	f
+_reader:message	3rd\pbc\protobuf.lua	/^function _reader:message(key, message_type)$/;"	f
+_reader:message_repeated	3rd\pbc\protobuf.lua	/^function _reader:message_repeated(key, message_type)$/;"	f
+_reader:real	3rd\pbc\protobuf.lua	/^function _reader:real(key)$/;"	f
+_reader:real_repeated	3rd\pbc\protobuf.lua	/^function _reader:real_repeated(key)$/;"	f
+_reader:string	3rd\pbc\protobuf.lua	/^function _reader:string(key)$/;"	f
+_reader:string_repeated	3rd\pbc\protobuf.lua	/^function _reader:string_repeated(key)$/;"	f
+_reader:uint52	3rd\pbc\protobuf.lua	/^function _reader:uint52(key)$/;"	f
+_reader:uint52_repeated	3rd\pbc\protobuf.lua	/^function _reader:uint52_repeated(key)$/;"	f
+_reader[10] 	3rd\pbc\protobuf.lua	/^_reader[10] = function(msg) return _reader.int52 end$/;"	f
+_reader[11] 	3rd\pbc\protobuf.lua	/^_reader[11] = function(msg) return _reader.uint52 end$/;"	f
+_reader[128+10] 	3rd\pbc\protobuf.lua	/^_reader[128+10] = function(msg) return _reader.int52_repeated end$/;"	f
+_reader[128+11] 	3rd\pbc\protobuf.lua	/^_reader[128+11] = function(msg) return _reader.uint52_repeated end$/;"	f
+_reader[128+1] 	3rd\pbc\protobuf.lua	/^_reader[128+1] = function(msg) return _reader.int_repeated end$/;"	f
+_reader[128+2] 	3rd\pbc\protobuf.lua	/^_reader[128+2] = function(msg) return _reader.real_repeated end$/;"	f
+_reader[128+3] 	3rd\pbc\protobuf.lua	/^_reader[128+3] = function(msg) return _reader.bool_repeated end$/;"	f
+_reader[128+4] 	3rd\pbc\protobuf.lua	/^_reader[128+4] = function(msg) return _reader.string_repeated end$/;"	f
+_reader[128+5] 	3rd\pbc\protobuf.lua	/^_reader[128+5] = function(msg) return _reader.string_repeated end$/;"	f
+_reader[128+6] 	3rd\pbc\protobuf.lua	/^_reader[128+6] = function(msg)$/;"	f
+_reader[128+7] 	3rd\pbc\protobuf.lua	/^_reader[128+7] = function(msg) return _reader.int64_repeated end$/;"	f
+_reader[128+8] 	3rd\pbc\protobuf.lua	/^_reader[128+8] = function(msg) return _reader.int32_repeated end$/;"	f
+_reader[1] 	3rd\pbc\protobuf.lua	/^_reader[1] = function(msg) return _reader.int end$/;"	f
+_reader[2] 	3rd\pbc\protobuf.lua	/^_reader[2] = function(msg) return _reader.real end$/;"	f
+_reader[3] 	3rd\pbc\protobuf.lua	/^_reader[3] = function(msg) return _reader.bool end$/;"	f
+_reader[4] 	3rd\pbc\protobuf.lua	/^_reader[4] = function(msg) return _reader.string end$/;"	f
+_reader[5] 	3rd\pbc\protobuf.lua	/^_reader[5] = function(msg) return _reader.string end$/;"	f
+_reader[6] 	3rd\pbc\protobuf.lua	/^_reader[6] = function(msg)$/;"	f
+_reader[7] 	3rd\pbc\protobuf.lua	/^_reader[7] = function(msg) return _reader.int64 end$/;"	f
+_reader[8] 	3rd\pbc\protobuf.lua	/^_reader[8] = function(msg) return _reader.int32 end$/;"	f
+_writer:bool	3rd\pbc\protobuf.lua	/^function _writer:bool(k,v)$/;"	f
+_writer:bool_repeated	3rd\pbc\protobuf.lua	/^function _writer:bool_repeated(k,v)$/;"	f
+_writer:int32_repeated	3rd\pbc\protobuf.lua	/^function _writer:int32_repeated(k,v)$/;"	f
+_writer:int52_repeated	3rd\pbc\protobuf.lua	/^function _writer:int52_repeated(k,v)$/;"	f
+_writer:int64_repeated	3rd\pbc\protobuf.lua	/^function _writer:int64_repeated(k,v)$/;"	f
+_writer:int_repeated	3rd\pbc\protobuf.lua	/^function _writer:int_repeated(k,v)$/;"	f
+_writer:message	3rd\pbc\protobuf.lua	/^function _writer:message(k, v , message_type)$/;"	f
+_writer:message_repeated	3rd\pbc\protobuf.lua	/^function _writer:message_repeated(k,v, message_type)$/;"	f
+_writer:real_repeated	3rd\pbc\protobuf.lua	/^function _writer:real_repeated(k,v)$/;"	f
+_writer:string_repeated	3rd\pbc\protobuf.lua	/^function _writer:string_repeated(k,v)$/;"	f
+_writer:uint52_repeated	3rd\pbc\protobuf.lua	/^function _writer:uint52_repeated(k,v)$/;"	f
+_writer[10] 	3rd\pbc\protobuf.lua	/^_writer[10] = function(msg) return _writer.int52 end$/;"	f
+_writer[11] 	3rd\pbc\protobuf.lua	/^_writer[11] = function(msg) return _writer.uint52 end$/;"	f
+_writer[128+10] 	3rd\pbc\protobuf.lua	/^_writer[128+10] = function(msg) return _writer.int52_repeated end$/;"	f
+_writer[128+11] 	3rd\pbc\protobuf.lua	/^_writer[128+11] = function(msg) return _writer.uint52_repeated end$/;"	f
+_writer[128+1] 	3rd\pbc\protobuf.lua	/^_writer[128+1] = function(msg) return _writer.int_repeated end$/;"	f
+_writer[128+2] 	3rd\pbc\protobuf.lua	/^_writer[128+2] = function(msg) return _writer.real_repeated end$/;"	f
+_writer[128+3] 	3rd\pbc\protobuf.lua	/^_writer[128+3] = function(msg) return _writer.bool_repeated end$/;"	f
+_writer[128+4] 	3rd\pbc\protobuf.lua	/^_writer[128+4] = function(msg) return _writer.string_repeated end$/;"	f
+_writer[128+5] 	3rd\pbc\protobuf.lua	/^_writer[128+5] = function(msg) return _writer.string_repeated end$/;"	f
+_writer[128+6] 	3rd\pbc\protobuf.lua	/^_writer[128+6] = function(msg)$/;"	f
+_writer[128+7] 	3rd\pbc\protobuf.lua	/^_writer[128+7] = function(msg) return _writer.int64_repeated end$/;"	f
+_writer[128+8] 	3rd\pbc\protobuf.lua	/^_writer[128+8] = function(msg) return _writer.int32_repeated end$/;"	f
+_writer[1] 	3rd\pbc\protobuf.lua	/^_writer[1] = function(msg) return _writer.int end$/;"	f
+_writer[2] 	3rd\pbc\protobuf.lua	/^_writer[2] = function(msg) return _writer.real end$/;"	f
+_writer[3] 	3rd\pbc\protobuf.lua	/^_writer[3] = function(msg) return _writer.bool end$/;"	f
+_writer[4] 	3rd\pbc\protobuf.lua	/^_writer[4] = function(msg) return _writer.string end$/;"	f
+_writer[5] 	3rd\pbc\protobuf.lua	/^_writer[5] = function(msg) return _writer.string end$/;"	f
+_writer[6] 	3rd\pbc\protobuf.lua	/^_writer[6] = function(msg)$/;"	f
+_writer[7] 	3rd\pbc\protobuf.lua	/^_writer[7] = function(msg) return _writer.int64 end$/;"	f
+_writer[8] 	3rd\pbc\protobuf.lua	/^_writer[8] = function(msg) return _writer.int32 end$/;"	f
+check	3rd\pbc\protobuf.lua	/^function check(typename , field)$/;"	f
+decode	3rd\pbc\protobuf.lua	/^function decode(typename, buffer, length)$/;"	f
+decode_message	3rd\pbc\protobuf.lua	/^local function decode_message( message , buffer, length)$/;"	f
+decode_message_cb	3rd\pbc\protobuf.lua	/^local function decode_message_cb(typename, buffer)$/;"	f
+decode_message_mt.__index	3rd\pbc\protobuf.lua	/^function decode_message_mt.__index(tbl, key)$/;"	f
+decode_message_mt.__pairs	3rd\pbc\protobuf.lua	/^function decode_message_mt.__pairs(tbl)$/;"	f
+default_table	3rd\pbc\protobuf.lua	/^local function default_table(typename)$/;"	f
+encode	3rd\pbc\protobuf.lua	/^function encode( message, t , func , ...)$/;"	f
+encode_message	3rd\pbc\protobuf.lua	/^local function encode_message(CObj, message_type, t)$/;"	f
+expand	3rd\pbc\protobuf.lua	/^local function expand(tbl)$/;"	f
+lasterror	3rd\pbc\protobuf.lua	/^function lasterror()$/;"	f
+pack	3rd\pbc\protobuf.lua	/^function pack(pattern, ...)$/;"	f
+register	3rd\pbc\protobuf.lua	/^function register( buffer)$/;"	f
+register_file	3rd\pbc\protobuf.lua	/^function register_file(filename)$/;"	f
+set_default	3rd\pbc\protobuf.lua	/^local function set_default(typename, tbl)$/;"	f
+unpack	3rd\pbc\protobuf.lua	/^function unpack(pattern, buffer, length)$/;"	f
+_dump	3rd\sproto\print_r.lua	/^	local function _dump(t,space,name)$/;"	f
+print_r	3rd\sproto\print_r.lua	/^local function print_r(root)$/;"	f
+gen_response	3rd\sproto\sproto.lua	/^local function gen_response(self, response, session)$/;"	f
+host:attach	3rd\sproto\sproto.lua	/^function host:attach(sp)$/;"	f
+host:dispatch	3rd\sproto\sproto.lua	/^function host:dispatch(...)$/;"	f
+queryproto	3rd\sproto\sproto.lua	/^local function queryproto(self, pname)$/;"	f
+querytype	3rd\sproto\sproto.lua	/^local function querytype(self, typename)$/;"	f
+sproto.new	3rd\sproto\sproto.lua	/^function sproto.new(bin)$/;"	f
+sproto.parse	3rd\sproto\sproto.lua	/^function sproto.parse(ptext)$/;"	f
+sproto.sharenew	3rd\sproto\sproto.lua	/^function sproto.sharenew(cobj)$/;"	f
+sproto:decode	3rd\sproto\sproto.lua	/^function sproto:decode(typename, ...)$/;"	f
+sproto:default	3rd\sproto\sproto.lua	/^function sproto:default(typename, type)$/;"	f
+sproto:encode	3rd\sproto\sproto.lua	/^function sproto:encode(typename, tbl)$/;"	f
+sproto:host	3rd\sproto\sproto.lua	/^function sproto:host( packagename )$/;"	f
+sproto:pdecode	3rd\sproto\sproto.lua	/^function sproto:pdecode(typename, ...)$/;"	f
+sproto:pencode	3rd\sproto\sproto.lua	/^function sproto:pencode(typename, tbl)$/;"	f
+sproto:request_decode	3rd\sproto\sproto.lua	/^function sproto:request_decode(protoname, ...)$/;"	f
+sproto:request_encode	3rd\sproto\sproto.lua	/^function sproto:request_encode(protoname, tbl)$/;"	f
+sproto:response_decode	3rd\sproto\sproto.lua	/^function sproto:response_decode(protoname, ...)$/;"	f
+sproto:response_encode	3rd\sproto\sproto.lua	/^function sproto:response_encode(protoname, tbl)$/;"	f
+sproto_mt:__gc	3rd\sproto\sproto.lua	/^function sproto_mt:__gc()$/;"	f
+adjust	3rd\sproto\sprotoparser.lua	/^local function adjust(r)$/;"	f
+check_protocol	3rd\sproto\sprotoparser.lua	/^local function check_protocol(r)$/;"	f
+checktype	3rd\sproto\sprotoparser.lua	/^local function checktype(types, ptype, t)$/;"	f
+convert.protocol	3rd\sproto\sprotoparser.lua	/^function convert.protocol(all, obj)$/;"	f
+convert.type	3rd\sproto\sprotoparser.lua	/^function convert.type(all, obj)$/;"	f
+count_lines	3rd\sproto\sprotoparser.lua	/^local function count_lines(_,pos, parser_state)$/;"	f
+encodeall	3rd\sproto\sprotoparser.lua	/^local function encodeall(r)$/;"	f
+flattypename	3rd\sproto\sprotoparser.lua	/^local function flattypename(r)$/;"	f
+local exception 	3rd\sproto\sprotoparser.lua	/^local exception = lpeg.Cmt( lpeg.Carg(1) , function ( _ , pos, parser_state)$/;"	f
+multipat	3rd\sproto\sprotoparser.lua	/^local function multipat(pat)$/;"	f
+namedpat	3rd\sproto\sprotoparser.lua	/^local function namedpat(name, pat)$/;"	f
+packbytes	3rd\sproto\sprotoparser.lua	/^	function packbytes(str)$/;"	f
+packfield	3rd\sproto\sprotoparser.lua	/^local function packfield(f)$/;"	f
+packgroup	3rd\sproto\sprotoparser.lua	/^local function packgroup(t,p)$/;"	f
+packproto	3rd\sproto\sprotoparser.lua	/^local function packproto(name, p, alltypes)$/;"	f
+packtype	3rd\sproto\sprotoparser.lua	/^local function packtype(name, t, alltypes)$/;"	f
+packvalue	3rd\sproto\sprotoparser.lua	/^	function packvalue(id)$/;"	f
+parser	3rd\sproto\sprotoparser.lua	/^local function parser(text,filename)$/;"	f
+sparser.dump	3rd\sproto\sprotoparser.lua	/^function sparser.dump(str)$/;"	f
+sparser.parse	3rd\sproto\sprotoparser.lua	/^function sparser.parse(text, name)$/;"	f
+BaseCtrl:Ctor	EscapeRoom\Class\BaseCtrl.lua	/^function BaseCtrl:Ctor(id)$/;"	f
+BaseCtrl:OnCreate	EscapeRoom\Class\BaseCtrl.lua	/^function BaseCtrl:OnCreate()$/;"	f
+BaseSample:AddClick	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:AddClick(go, handler)$/;"	f
+BaseSample:AddEvent	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:AddEvent(name,handler )$/;"	f
+BaseSample:Awake	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:Awake()$/;"	f
+BaseSample:Child	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:Child(name)$/;"	f
+BaseSample:ChildComponent	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:ChildComponent(name,componentType)$/;"	f
+BaseSample:Ctor	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:Ctor(id, onFinish)$/;"	f
+BaseSample:GetEvent	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:GetEvent()$/;"	f
+BaseSample:Hide	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:Hide()$/;"	f
+BaseSample:Init	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:Init( )$/;"	f
+BaseSample:IsLoaded	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:IsLoaded()$/;"	f
+BaseSample:IsShow	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:IsShow()$/;"	f
+BaseSample:Load	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:Load(onFinish)$/;"	f
+BaseSample:OnCreate	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:OnCreate()$/;"	f
+BaseSample:OnDisable	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:OnDisable()$/;"	f
+BaseSample:OnEnable	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:OnEnable()$/;"	f
+BaseSample:Ondestroy	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:Ondestroy()$/;"	f
+BaseSample:PreLoad	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:PreLoad(onFinish)$/;"	f
+BaseSample:RegiserEvent	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:RegiserEvent()$/;"	f
+BaseSample:Show	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:Show()$/;"	f
+BaseSample:UnLoad	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:UnLoad()$/;"	f
+BaseSample:onEvent	EscapeRoom\Class\BaseSample.lua	/^function BaseSample:onEvent(eventName,...)$/;"	f
+BaseView:AddClick	EscapeRoom\Class\BaseView.lua	/^function BaseView:AddClick(go, handler)$/;"	f
+BaseView:AddEvent	EscapeRoom\Class\BaseView.lua	/^function BaseView:AddEvent(name,handler )$/;"	f
+BaseView:Awake	EscapeRoom\Class\BaseView.lua	/^function BaseView:Awake()$/;"	f
+BaseView:Child	EscapeRoom\Class\BaseView.lua	/^function BaseView:Child(name)$/;"	f
+BaseView:ChildComponent	EscapeRoom\Class\BaseView.lua	/^function BaseView:ChildComponent(name,componentType)$/;"	f
+BaseView:Ctor	EscapeRoom\Class\BaseView.lua	/^function BaseView:Ctor(id, onFinish)$/;"	f
+BaseView:GetEvent	EscapeRoom\Class\BaseView.lua	/^function BaseView:GetEvent()$/;"	f
+BaseView:Hide	EscapeRoom\Class\BaseView.lua	/^function BaseView:Hide()$/;"	f
+BaseView:Init	EscapeRoom\Class\BaseView.lua	/^function BaseView:Init( )$/;"	f
+BaseView:IsLoaded	EscapeRoom\Class\BaseView.lua	/^function BaseView:IsLoaded()$/;"	f
+BaseView:IsShow	EscapeRoom\Class\BaseView.lua	/^function BaseView:IsShow()$/;"	f
+BaseView:Load	EscapeRoom\Class\BaseView.lua	/^function BaseView:Load(onFinish)$/;"	f
+BaseView:OnCreate	EscapeRoom\Class\BaseView.lua	/^function BaseView:OnCreate()$/;"	f
+BaseView:OnDisable	EscapeRoom\Class\BaseView.lua	/^function BaseView:OnDisable()$/;"	f
+BaseView:OnEnable	EscapeRoom\Class\BaseView.lua	/^function BaseView:OnEnable()$/;"	f
+BaseView:Ondestroy	EscapeRoom\Class\BaseView.lua	/^function BaseView:Ondestroy()$/;"	f
+BaseView:PreLoad	EscapeRoom\Class\BaseView.lua	/^function BaseView:PreLoad(onFinish)$/;"	f
+BaseView:RegiserEvent	EscapeRoom\Class\BaseView.lua	/^function BaseView:RegiserEvent()$/;"	f
+BaseView:Show	EscapeRoom\Class\BaseView.lua	/^function BaseView:Show()$/;"	f
+BaseView:UnLoad	EscapeRoom\Class\BaseView.lua	/^function BaseView:UnLoad()$/;"	f
+BaseView:onEvent	EscapeRoom\Class\BaseView.lua	/^function BaseView:onEvent(eventName,...)$/;"	f
+class	EscapeRoom\Class\class.lua	/^function class(super)$/;"	f
+class_type.New	EscapeRoom\Class\class.lua	/^	class_type.New=function(...) $/;"	f
+create 	EscapeRoom\Class\class.lua	/^				create = function(c,...)$/;"	f
+CNode:New	EscapeRoom\Common\List.lua	/^function CNode:New()$/;"	f
+List:Add	EscapeRoom\Common\List.lua	/^function List:Add(data)$/;"	f
+List:Clear	EscapeRoom\Common\List.lua	/^function List:Clear()$/;"	f
+List:Display	EscapeRoom\Common\List.lua	/^function List:Display()$/;"	f
+List:Get	EscapeRoom\Common\List.lua	/^function List:Get(index)$/;"	f
+List:GetElement	EscapeRoom\Common\List.lua	/^function List:GetElement(index)$/;"	f
+List:Insert	EscapeRoom\Common\List.lua	/^function List:Insert(index, data)$/;"	f
+List:New	EscapeRoom\Common\List.lua	/^function List:New()$/;"	f
+List:Remove	EscapeRoom\Common\List.lua	/^function List:Remove(index)$/;"	f
+) return string.find	EscapeRoom\Common\functions.lua	/^    for st,sp in function() return string.find(str, delimiter, pos, true) end do$/;"	f
+BaseClass:New	EscapeRoom\Common\functions.lua	/^function BaseClass:New(...)$/;"	f
+SubClass:New	EscapeRoom\Common\functions.lua	/^function SubClass:New(...)$/;"	f
+_copy	EscapeRoom\Common\functions.lua	/^    local function _copy(object)$/;"	f
+_dump	EscapeRoom\Common\functions.lua	/^    local function _dump(t)$/;"	f
+child	EscapeRoom\Common\functions.lua	/^function child(str)$/;"	f
+class	EscapeRoom\Common\functions.lua	/^function class(classname, super)$/;"	f
+clone	EscapeRoom\Common\functions.lua	/^function clone(object)$/;"	f
+cls 	EscapeRoom\Common\functions.lua	/^            cls = {Ctor = function() end}$/;"	f
+cls.Ctor    	EscapeRoom\Common\functions.lua	/^        cls.Ctor    = function() end$/;"	f
+cls.New	EscapeRoom\Common\functions.lua	/^        function cls.New(...)$/;"	f
+createPanel	EscapeRoom\Common\functions.lua	/^function createPanel(name)$/;"	f
+destroy	EscapeRoom\Common\functions.lua	/^function destroy(obj)$/;"	f
+find	EscapeRoom\Common\functions.lua	/^function find(str)$/;"	f
+findPanel	EscapeRoom\Common\functions.lua	/^function findPanel(str) $/;"	f
+handler	EscapeRoom\Common\functions.lua	/^function handler(target, method)$/;"	f
+if superType 	EscapeRoom\Common\functions.lua	/^    if superType == "function" or (super and super.__ctype == 1) then$/;"	f
+if superType ~	EscapeRoom\Common\functions.lua	/^    if superType ~= "function" and superType ~= "table" then$/;"	f
+iskindof	EscapeRoom\Common\functions.lua	/^function iskindof(obj, className)$/;"	f
+isset	EscapeRoom\Common\functions.lua	/^function isset(arr, key)$/;"	f
+log	EscapeRoom\Common\functions.lua	/^function log(str)$/;"	f
+logError	EscapeRoom\Common\functions.lua	/^function logError(str) $/;"	f
+logWarn	EscapeRoom\Common\functions.lua	/^function logWarn(str) $/;"	f
+math.randomfloat	EscapeRoom\Common\functions.lua	/^function math.randomfloat(min, max)$/;"	f
+math.round	EscapeRoom\Common\functions.lua	/^function math.round(num)$/;"	f
+newObject	EscapeRoom\Common\functions.lua	/^function newObject(prefab)$/;"	f
+pairsByKeys	EscapeRoom\Common\functions.lua	/^function pairsByKeys(t)  $/;"	f
+print_r	EscapeRoom\Common\functions.lua	/^function print_r(sth)$/;"	f
+string.ltrim	EscapeRoom\Common\functions.lua	/^function string.ltrim(str)$/;"	f
+string.rtrim	EscapeRoom\Common\functions.lua	/^function string.rtrim(str)$/;"	f
+string.split	EscapeRoom\Common\functions.lua	/^function string.split(str, delimiter)$/;"	f
+string.trim	EscapeRoom\Common\functions.lua	/^function string.trim(str)$/;"	f
+string.ucfirst	EscapeRoom\Common\functions.lua	/^function string.ucfirst(str)$/;"	f
+string.utf8len	EscapeRoom\Common\functions.lua	/^function string.utf8len(str)$/;"	f
+stringtobool	EscapeRoom\Common\functions.lua	/^function stringtobool(v)	$/;"	f
+subGet	EscapeRoom\Common\functions.lua	/^function subGet(childNode, typeName)		$/;"	f
+table.filter	EscapeRoom\Common\functions.lua	/^function table.filter(t, fun)$/;"	f
+table.find	EscapeRoom\Common\functions.lua	/^function table.find(t, item)$/;"	f
+table.indexOf	EscapeRoom\Common\functions.lua	/^function table.indexOf(list, target, from, useMaxN)$/;"	f
+table.indexOfKey	EscapeRoom\Common\functions.lua	/^function table.indexOfKey(list, key, value, from, useMaxN)$/;"	f
+table.insertTo	EscapeRoom\Common\functions.lua	/^function table.insertTo(dest, src, begin)$/;"	f
+table.keyOfItem	EscapeRoom\Common\functions.lua	/^function table.keyOfItem(t, item)$/;"	f
+table.keys	EscapeRoom\Common\functions.lua	/^function table.keys(t)$/;"	f
+table.map	EscapeRoom\Common\functions.lua	/^function table.map(t, fun)$/;"	f
+table.merge	EscapeRoom\Common\functions.lua	/^function table.merge(dest, src)$/;"	f
+table.nums	EscapeRoom\Common\functions.lua	/^function table.nums(t)$/;"	f
+table.removeItem	EscapeRoom\Common\functions.lua	/^function table.removeItem(list, item, removeAll)$/;"	f
+table.removeWithValue	EscapeRoom\Common\functions.lua	/^function table.removeWithValue(t, value)$/;"	f
+table.values	EscapeRoom\Common\functions.lua	/^function table.values(t)$/;"	f
+table.walk	EscapeRoom\Common\functions.lua	/^function table.walk(t, fun)$/;"	f
+tobool	EscapeRoom\Common\functions.lua	/^function tobool(v)$/;"	f
+toint	EscapeRoom\Common\functions.lua	/^function toint(v)$/;"	f
+tonum	EscapeRoom\Common\functions.lua	/^function tonum(e, base)$/;"	f
+totable	EscapeRoom\Common\functions.lua	/^function totable(v)$/;"	f
+time.CalGap	EscapeRoom\Common\time.lua	/^function time.CalGap(time)$/;"	f
+time.Format	EscapeRoom\Common\time.lua	/^function time.Format(time)$/;"	f
+time.GetTime	EscapeRoom\Common\time.lua	/^function time.GetTime()$/;"	f
+Game.DataInit	EscapeRoom\Game.lua	/^function Game.DataInit()$/;"	f
+Game.Init	EscapeRoom\Game.lua	/^function Game.Init()$/;"	f
+Game.OnGetLocationData	EscapeRoom\Game.lua	/^function Game.OnGetLocationData(data)$/;"	f
+Game.OnInitOK	EscapeRoom\Game.lua	/^function Game.OnInitOK(path)$/;"	f
+Game.Require	EscapeRoom\Game.lua	/^function Game.Require(path)$/;"	f
+Game.Start	EscapeRoom\Game.lua	/^function Game.Start()$/;"	f
+_dump	EscapeRoom\Log.lua	/^    local function _dump(object, label, indent, nest, keylen)$/;"	f
+_v	EscapeRoom\Log.lua	/^    local function _v(v)$/;"	f
+_vardump	EscapeRoom\Log.lua	/^    local function _vardump(object, label, indent, nest)$/;"	f
+dump	EscapeRoom\Log.lua	/^function dump(object, label, isReturnContents, nesting)$/;"	f
+echo	EscapeRoom\Log.lua	/^function echo(fmt, ...)$/;"	f
+vardump	EscapeRoom\Log.lua	/^function vardump(object, label)$/;"	f
+Network.OnConnect	EscapeRoom\Logic\Network.lua	/^function Network.OnConnect() $/;"	f
+Network.OnDisconnect	EscapeRoom\Logic\Network.lua	/^function Network.OnDisconnect() $/;"	f
+Network.OnException	EscapeRoom\Logic\Network.lua	/^function Network.OnException() $/;"	f
+Network.OnMessage	EscapeRoom\Logic\Network.lua	/^function Network.OnMessage(buffer) $/;"	f
+Network.OnSocket	EscapeRoom\Logic\Network.lua	/^function Network.OnSocket(key, data)$/;"	f
+Network.Start	EscapeRoom\Logic\Network.lua	/^function Network.Start() $/;"	f
+Network.TestLoginBinary	EscapeRoom\Logic\Network.lua	/^function Network.TestLoginBinary(buffer)$/;"	f
+Network.TestLoginPbc	EscapeRoom\Logic\Network.lua	/^function Network.TestLoginPbc(buffer)$/;"	f
+Network.TestLoginPblua	EscapeRoom\Logic\Network.lua	/^function Network.TestLoginPblua(buffer)$/;"	f
+Network.TestLoginSproto	EscapeRoom\Logic\Network.lua	/^function Network.TestLoginSproto(buffer)$/;"	f
+Network.Unload	EscapeRoom\Logic\Network.lua	/^function Network.Unload()$/;"	f
+M:CreateManager	EscapeRoom\Manager\ARManager.lua	/^function M:CreateManager()$/;"	f
+M:Init	EscapeRoom\Manager\ARManager.lua	/^function M:Init()$/;"	f
+M:LoadData	EscapeRoom\Manager\ARManager.lua	/^function M:LoadData(index)$/;"	f
+M:OnProcessARAction	EscapeRoom\Manager\ARManager.lua	/^function M:OnProcessARAction(event, data)$/;"	f
+M:OnTargetFound	EscapeRoom\Manager\ARManager.lua	/^function M:OnTargetFound()$/;"	f
+M:OnTargetLost	EscapeRoom\Manager\ARManager.lua	/^function M:OnTargetLost()$/;"	f
+M:SetActive	EscapeRoom\Manager\ARManager.lua	/^function M:SetActive(bool)$/;"	f
+CtrlManager.AddCtrl	EscapeRoom\Manager\CtrlManager.lua	/^function CtrlManager.AddCtrl(ctrlName, ctrlObj)$/;"	f
+CtrlManager.Close	EscapeRoom\Manager\CtrlManager.lua	/^function CtrlManager.Close()$/;"	f
+CtrlManager.GetCtrl	EscapeRoom\Manager\CtrlManager.lua	/^function CtrlManager.GetCtrl(ctrlName)$/;"	f
+CtrlManager.Init	EscapeRoom\Manager\CtrlManager.lua	/^function CtrlManager.Init()$/;"	f
+CtrlManager.RemoveCtrl	EscapeRoom\Manager\CtrlManager.lua	/^function CtrlManager.RemoveCtrl(ctrlName)$/;"	f
+M:AddEventListener	EscapeRoom\Manager\EventManager.lua	/^function M:AddEventListener(eventName, listener,instance)$/;"	f
+M:CreateManager	EscapeRoom\Manager\EventManager.lua	/^function M:CreateManager(o)$/;"	f
+M:Dump	EscapeRoom\Manager\EventManager.lua	/^function M:Dump()$/;"	f
+M:Init	EscapeRoom\Manager\EventManager.lua	/^function M:Init()$/;"	f
+M:Log	EscapeRoom\Manager\EventManager.lua	/^function M:Log(fmt,...)$/;"	f
+M:Release	EscapeRoom\Manager\EventManager.lua	/^function M:Release()$/;"	f
+M:RemoveAll	EscapeRoom\Manager\EventManager.lua	/^function M:RemoveAll()$/;"	f
+M:RemoveEventAllListener	EscapeRoom\Manager\EventManager.lua	/^function M:RemoveEventAllListener(eventName)$/;"	f
+M:RemoveEventListener	EscapeRoom\Manager\EventManager.lua	/^function M:RemoveEventListener(eventName, key)$/;"	f
+M:SetDebugEnabled	EscapeRoom\Manager\EventManager.lua	/^function M:SetDebugEnabled(enabled)$/;"	f
+M:TriggerEvent	EscapeRoom\Manager\EventManager.lua	/^function M:TriggerEvent(eventName,...)$/;"	f
+CalAverage	EscapeRoom\Manager\LBSManager.lua	/^function CalAverage()$/;"	f
+M:CreateManager	EscapeRoom\Manager\LBSManager.lua	/^function M:CreateManager(o)$/;"	f
+M:Init	EscapeRoom\Manager\LBSManager.lua	/^function M:Init()$/;"	f
+M:OnGetLocationData	EscapeRoom\Manager\LBSManager.lua	/^function M:OnGetLocationData(data)$/;"	f
+M:ReturnMainActivity	EscapeRoom\Manager\LBSManager.lua	/^function M:ReturnMainActivity()$/;"	f
+M:CreateManager	EscapeRoom\Manager\LoadManager.lua	/^function M:CreateManager(o)$/;"	f
+M:Init	EscapeRoom\Manager\LoadManager.lua	/^function M:Init()$/;"	f
+M:LoadOver	EscapeRoom\Manager\LoadManager.lua	/^function M:LoadOver(key)$/;"	f
+M:StartLoad	EscapeRoom\Manager\LoadManager.lua	/^function M:StartLoad(key, count)$/;"	f
+M:CreateManager	EscapeRoom\Manager\TimeManager.lua	/^function M:CreateManager(o)$/;"	f
+M:Init	EscapeRoom\Manager\TimeManager.lua	/^function M:Init()$/;"	f
+BagItemModel:Init	EscapeRoom\Model\BagItemModel.lua	/^function BagItemModel:Init(data)$/;"	f
+BagItemModel:New	EscapeRoom\Model\BagItemModel.lua	/^function BagItemModel:New(data)$/;"	f
+SectionModel:Init	EscapeRoom\Model\SectionModel.lua	/^function SectionModel:Init(data)$/;"	f
+SectionModel:Init	EscapeRoom\Model\SectionModel.lua	/^function SectionModel:Init(step, stepType, event, message, answer, prompt, roleType)$/;"	f
+SectionModel:New	EscapeRoom\Model\SectionModel.lua	/^function SectionModel:New(data)$/;"	f
+SectionModel:New	EscapeRoom\Model\SectionModel.lua	/^function SectionModel:New(step, stepType, event, message, answer, prompt, roleType)$/;"	f
+ParseString	EscapeRoom\Process.lua	/^function ParseString(message)$/;"	f
+Process.ActionCheckMessage	EscapeRoom\Process.lua	/^function Process.ActionCheckMessage(obj, message)$/;"	f
+Process.Excute	EscapeRoom\Process.lua	/^function Process.Excute()$/;"	f
+Process.GetCurrentModel	EscapeRoom\Process.lua	/^function Process.GetCurrentModel()$/;"	f
+Process.GetPromptStep	EscapeRoom\Process.lua	/^function Process.GetPromptStep()$/;"	f
+Process.Init	EscapeRoom\Process.lua	/^function Process.Init(data)$/;"	f
+Process.Next	EscapeRoom\Process.lua	/^function Process.Next()$/;"	f
+["<color>"] 	EscapeRoom\Process.lua	/^["<color>"] = function(strList)$/;"	f
+C.OnClick_Add	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C.OnClick_Add(ctrl)$/;"	f
+C.OnClick_Display	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C.OnClick_Display(ctrl)$/;"	f
+C.OnClick_Remove	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C.OnClick_Remove(ctrl)$/;"	f
+C:AddItem	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C:AddItem(id)$/;"	f
+C:CreateItem	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C:CreateItem()$/;"	f
+C:Ctor	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C:Ctor(obj, id)$/;"	f
+C:Init	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C:Init()$/;"	f
+C:InsertItem	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C:InsertItem(index, id)$/;"	f
+C:OnCreate	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C:OnCreate()$/;"	f
+C:RemoveItem	EscapeRoom\UI\Bag\BagCtrl.lua	/^function C:RemoveItem(index)$/;"	f
+V:Ctor	EscapeRoom\UI\Bag\BagView.lua	/^function V:Ctor(obj, id, onFinish)$/;"	f
+V:Init	EscapeRoom\UI\Bag\BagView.lua	/^function V:Init()$/;"	f
+ChatCtrl.Active	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.Active(obj, roleType)$/;"	f
+ChatCtrl.AddBubble	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.AddBubble(obj, str, isLeft)$/;"	f
+ChatCtrl.CountDown	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.CountDown()$/;"	f
+ChatCtrl.OnClick_ReturnMainActivity	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.OnClick_ReturnMainActivity(obj)$/;"	f
+ChatCtrl.OnClick_SendMessage	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.OnClick_SendMessage(obj)$/;"	f
+ChatCtrl.OnCreate	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.OnCreate(obj)$/;"	f
+ChatCtrl.OnPrecessInfoAction	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.OnPrecessInfoAction(event, model)$/;"	f
+ChatCtrl.OnProcessPicAction	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.OnProcessPicAction(event, model)$/;"	f
+ChatCtrl.ParseString	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.ParseString(str)$/;"	f
+ChatCtrl.Prompt	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl.Prompt(obj)$/;"	f
+ChatCtrl:Ctor	EscapeRoom\UI\Chat\ChatCtrl.lua	/^function ChatCtrl:Ctor(obj, id)$/;"	f
+ChatModel:AddBubbleRefresh	EscapeRoom\UI\Chat\ChatModel.lua	/^function ChatModel:AddBubbleRefresh(bubbleFinalHeight)$/;"	f
+ChatModel:CountDown	EscapeRoom\UI\Chat\ChatModel.lua	/^function ChatModel:CountDown()$/;"	f
+ChatModel:Init	EscapeRoom\UI\Chat\ChatModel.lua	/^function ChatModel:Init()$/;"	f
+ChatModel:New	EscapeRoom\UI\Chat\ChatModel.lua	/^function ChatModel:New()$/;"	f
+ChatView:Ctor	EscapeRoom\UI\Chat\ChatView.lua	/^function ChatView:Ctor(obj, id, onFinish)$/;"	f
+ChatView:InitPanel	EscapeRoom\UI\Chat\ChatView.lua	/^function ChatView:InitPanel()$/;"	f
+ChatView:RefreshContent	EscapeRoom\UI\Chat\ChatView.lua	/^function ChatView:RefreshContent(chatModel)$/;"	f
+ChatView:RefreshCountDown	EscapeRoom\UI\Chat\ChatView.lua	/^function ChatView:RefreshCountDown(key, time)$/;"	f
+Bubble:ChangeAlignment	EscapeRoom\UI\Common\BubbleSample.lua	/^function Bubble:ChangeAlignment(f_deep, b_isLeft)$/;"	f
+Bubble:ChangeSize	EscapeRoom\UI\Common\BubbleSample.lua	/^function Bubble:ChangeSize(width, textMaxWidth, deep, isWarp)$/;"	f
+Bubble:InitInfo	EscapeRoom\UI\Common\BubbleSample.lua	/^function Bubble:InitInfo(str ,width, deep, isLeft, obj)$/;"	f
+Bubble:InitPic	EscapeRoom\UI\Common\BubbleSample.lua	/^function Bubble:InitPic(deep, isLeft)$/;"	f
+Bubble:New	EscapeRoom\UI\Common\BubbleSample.lua	/^function Bubble:New(obj)$/;"	f
+Bubble:Start	EscapeRoom\UI\Common\BubbleSample.lua	/^function Bubble:Start(obj)$/;"	f
+Item.OnCreate	EscapeRoom\UI\Common\ItemSample.lua	/^function Item.OnCreate(this, go)$/;"	f
+Item:Init	EscapeRoom\UI\Common\ItemSample.lua	/^function Item:Init(data)$/;"	f
+Item:New	EscapeRoom\UI\Common\ItemSample.lua	/^function Item:New(name)$/;"	f
+Item:Start	EscapeRoom\UI\Common\ItemSample.lua	/^function Item:Start(name)$/;"	f
+C:Ctor	EscapeRoom\UI\Menu\MenuCtrl.lua	/^function C:Ctor(obj, id)$/;"	f
+C:OnClick_Bag	EscapeRoom\UI\Menu\MenuCtrl.lua	/^function C:OnClick_Bag()$/;"	f
+C:OnClick_Chat	EscapeRoom\UI\Menu\MenuCtrl.lua	/^function C:OnClick_Chat(obj)$/;"	f
+C:OnClick_VRGame	EscapeRoom\UI\Menu\MenuCtrl.lua	/^function C:OnClick_VRGame()$/;"	f
+C:OnClick_Wheel	EscapeRoom\UI\Menu\MenuCtrl.lua	/^function C:OnClick_Wheel()$/;"	f
+C:OnCreate	EscapeRoom\UI\Menu\MenuCtrl.lua	/^function C:OnCreate()$/;"	f
+V:Ctor	EscapeRoom\UI\Menu\MenuView.lua	/^function V:Ctor(obj, id, onFinish)$/;"	f
+V:Init	EscapeRoom\UI\Menu\MenuView.lua	/^function V:Init()$/;"	f
+V:Ctor	EscapeRoom\UI\Prompt\PromptView.lua	/^function V:Ctor()$/;"	f
+C.OnClick_SPY	EscapeRoom\UI\SelectRole\SelectRoleCtrl.lua	/^function C.OnClick_SPY()$/;"	f
+C.OnClick_Sheriff	EscapeRoom\UI\SelectRole\SelectRoleCtrl.lua	/^function C.OnClick_Sheriff()$/;"	f
+C.OnCreate	EscapeRoom\UI\SelectRole\SelectRoleCtrl.lua	/^function C.OnCreate(obj)$/;"	f
+C:Ctor	EscapeRoom\UI\SelectRole\SelectRoleCtrl.lua	/^function C:Ctor(obj, id)$/;"	f
+V:Ctor	EscapeRoom\UI\SelectRole\SelectRoleView.lua	/^function V:Ctor(obj, id, onFinish)$/;"	f
+V:Init	EscapeRoom\UI\SelectRole\SelectRoleView.lua	/^function V:Init()$/;"	f
+Main	Main.lua	/^function Main()					$/;"	f
+OnLevelWasLoaded	Main.lua	/^function OnLevelWasLoaded(level)$/;"	f
+) e:WaitForCompletion	eventlib.lua	/^        e:connect(function() e:WaitForCompletion() print'done with connected function' end)$/;"	f
+) print	eventlib.lua	/^        spawn(function() print("Wait() results", e:wait()) print"|- done waiting!" end)$/;"	f
+) print"Throwing error... " error	eventlib.lua	/^    e:connect(function() print"Throwing error... " error("...") end)$/;"	f
+) wait	eventlib.lua	/^        e:connect(function() wait(2, true) print'fired after waiting' end)$/;"	f
+_M:Connect	eventlib.lua	/^function _M:Connect(handler)$/;"	f
+_M:ConnectionCount	eventlib.lua	/^function _M:ConnectionCount()$/;"	f
+_M:Destroy	eventlib.lua	/^function _M:Destroy()$/;"	f
+_M:Disconnect	eventlib.lua	/^function _M:Disconnect(handler)$/;"	f
+_M:DisconnectAll	eventlib.lua	/^function _M:DisconnectAll()$/;"	f
+_M:Fire	eventlib.lua	/^function _M:Fire(...)$/;"	f
+_M:IsWaiting	eventlib.lua	/^function _M:IsWaiting()$/;"	f
+_M:Wait	eventlib.lua	/^function _M:Wait()$/;"	f
+_M:WaitForCompletion	eventlib.lua	/^function _M:WaitForCompletion()$/;"	f
+_M:WaitForWaiters	eventlib.lua	/^function _M:WaitForWaiters()$/;"	f
+_M:new	eventlib.lua	/^function _M:new(name)$/;"	f
+assert(type(handler) 	eventlib.lua	/^    assert(type(handler) == "function" or type(handler) == "nil", "Invalid handler. Expected function or nil, got " .. type(handler))$/;"	f
+assert(type(handler) 	eventlib.lua	/^    assert(type(handler) == "function", "Invalid handler. Expected function got " .. type(handler))$/;"	f
+local c 	eventlib.lua	/^    local c = coroutine.create(function()$/;"	f
+local f 	eventlib.lua	/^    local f = function(...) print("| Fired!", ...) end$/;"	f
+spawn	eventlib.lua	/^local function spawn(f)$/;"	f
+t.Disconnect 	eventlib.lua	/^    t.Disconnect = function()$/;"	f
+Event.AddListener	events.lua	/^function Event.AddListener(event,handler)$/;"	f
+Event.Brocast	events.lua	/^function Event.Brocast(event,...)$/;"	f
+Event.RemoveListener	events.lua	/^function Event.RemoveListener(event,handler)$/;"	f
+has to be function, " .. type	events.lua	/^		error("handler parameter in addlistener function has to be function, " .. type(handler) .. " not right")$/;"	f
+has to be string, " .. type	events.lua	/^		error("event parameter in addlistener function has to be string, " .. type(event) .. " not right.")$/;"	f
+if not handler or type(handler) ~	events.lua	/^	if not handler or type(handler) ~= "function" then$/;"	f
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/

@@ -28,15 +28,24 @@ namespace LuaFramework {
         /// 添加打入Lua代码的AssetBundle
         /// </summary>
         /// <param name="bundle"></param>
-        public void AddBundle(string bundleName) {
+        public void AddBundle(string bundleName)
+        {
             string url = Util.DataPath + bundleName.ToLower();
-            if (File.Exists(url)) {
-                AssetBundle bundle = AssetBundle.CreateFromFile(url);
+
+            if (File.Exists(url))
+            {
+                //Debug.Log("正常加载" + url);
+                AssetBundle bundle = AssetBundle.LoadFromFile(url);
                 if (bundle != null)
                 {
                     bundleName = bundleName.Replace("lua/", "").Replace(".unity3d", "");
                     base.AddSearchBundle(bundleName.ToLower(), bundle);
                 }
+            }
+            else
+            {
+                Debug.Log("加载失败一个资源" + bundleName);
+                Debug.Log(url);
             }
         }
 

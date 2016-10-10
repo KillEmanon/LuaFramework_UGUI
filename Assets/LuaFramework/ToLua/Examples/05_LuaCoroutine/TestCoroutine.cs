@@ -11,8 +11,8 @@ public class TestCoroutine : MonoBehaviour
     private LuaLooper looper = null;
 
 	void Awake () 
-    {        
-        lua  = new LuaState();
+    {
+        lua = new LuaState();
         lua.Start();
         LuaBinder.Bind(lua);                
         looper = gameObject.AddComponent<LuaLooper>();

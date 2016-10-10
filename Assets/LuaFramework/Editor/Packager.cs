@@ -59,14 +59,19 @@ public class Packager {
             Directory.Delete(Util.DataPath, true);
         }
         string streamPath = Application.streamingAssetsPath;
-        if (Directory.Exists(streamPath)) {
-            Directory.Delete(streamPath, true);
+        if (Directory.Exists(streamPath))
+        {
+            //Directory.Delete(streamPath, true);
         }
-        Directory.CreateDirectory(streamPath);
+        else
+        {
+            Directory.CreateDirectory(streamPath);
+        }
         AssetDatabase.Refresh();
 
         maps.Clear();
         if (AppConst.LuaBundleMode) {
+            //打包lua代码
             HandleLuaBundle();
         } else {
             HandleLuaFile();
@@ -74,13 +79,18 @@ public class Packager {
         if (AppConst.ExampleMode) {
             HandleExampleBundle();
         }
+
+        //打包普通资源文件和AR资源文件
+        HandleAssetBundle();
+        HandleARTexture();
+
         string resPath = "Assets/" + AppConst.AssetDir;
         BuildAssetBundleOptions options = BuildAssetBundleOptions.DeterministicAssetBundle | 
                                           BuildAssetBundleOptions.UncompressedAssetBundle;
         BuildPipeline.BuildAssetBundles(resPath, maps.ToArray(), options, target);
         BuildFileIndex();
 
-        string streamDir = Application.dataPath + "/" + AppConst.LuaTempDir;
+        string streamDir = Application.dataPath + "/" + AppConst.LuaPersisDir;
         if (Directory.Exists(streamDir)) Directory.Delete(streamDir, true);
         AssetDatabase.Refresh();
     }
@@ -102,30 +112,38 @@ public class Packager {
     /// 处理Lua代码包
     /// </summary>
     static void HandleLuaBundle() {
-        string streamDir = Application.dataPath + "/" + AppConst.LuaTempDir;
+        string streamDir = Application.dataPath + "/" + AppConst.LuaPersisDir;
         if (!Directory.Exists(streamDir)) Directory.CreateDirectory(streamDir);
 
-        string[] srcDirs = { CustomSettings.luaDir, CustomSettings.FrameworkPath + "/ToLua/Lua" };
-        for (int i = 0; i < srcDirs.Length; i++) {
-            if (AppConst.LuaByteMode) {
+        //Emanon(2016.9.29) 暂存的用于Byte化lua代码过程
+        string[] srcDirs = { CustomSettings.luaDir, CustomSettings.toluaLuaDir };
+        for (int i = 0; i < srcDirs.Length; i++)
+        {
+            if (AppConst.LuaByteMode)
+            {
                 string sourceDir = srcDirs[i];
                 string[] files = Directory.GetFiles(sourceDir, "*.lua", SearchOption.AllDirectories);
                 int len = sourceDir.Length;
 
-                if (sourceDir[len - 1] == '/' || sourceDir[len - 1] == '\\') {
+                if (sourceDir[len - 1] == '/' || sourceDir[len - 1] == '\\')
+                {
                     --len;
                 }
-                for (int j = 0; j < files.Length; j++) {
+                for (int j = 0; j < files.Length; j++)
+                {
                     string str = files[j].Remove(0, len);
                     string dest = streamDir + str + ".bytes";
                     string dir = Path.GetDirectoryName(dest);
                     Directory.CreateDirectory(dir);
                     EncodeLuaFile(files[j], dest);
-                }    
-            } else {
+                }
+            }
+            else
+            {
                 ToLuaMenu.CopyLuaBytesFiles(srcDirs[i], streamDir);
             }
         }
+
         string[] dirs = Directory.GetDirectories(streamDir, "*", SearchOption.AllDirectories);
         for (int i = 0; i < dirs.Length; i++) {
             string name = dirs[i].Replace(streamDir, string.Empty);
@@ -135,7 +153,7 @@ public class Packager {
             string path = "Assets" + dirs[i].Replace(Application.dataPath, "");
             AddBuildMap(name, "*.bytes", path);
         }
-        AddBuildMap("lua/lua" + AppConst.ExtName, "*.bytes", "Assets/" + AppConst.LuaTempDir);
+        AddBuildMap("lua/lua" + AppConst.ExtName, "*.bytes", "Assets/" + AppConst.LuaPersisDir);
 
         //-------------------------------处理非Lua文件----------------------------------
         string luaPath = AppDataPath + "/StreamingAssets/lua/";
@@ -162,12 +180,36 @@ public class Packager {
     static void HandleExampleBundle() {
         string resPath = AppDataPath + "/" + AppConst.AssetDir + "/";
         if (!Directory.Exists(resPath)) Directory.CreateDirectory(resPath);
+    }
 
-        AddBuildMap("prompt" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Prompt");
-        AddBuildMap("message" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Message");
+    /// <summary>
+    /// 处理实体包
+    /// </summary>
+    static void HandleAssetBundle()
+    {
+        string resPath = AppDataPath + "/" + AppConst.AssetDir + "/";
+        if (!Directory.Exists(resPath)) Directory.CreateDirectory(resPath);
 
-        AddBuildMap("prompt_asset" + AppConst.ExtName, "*.png", "Assets/LuaFramework/Examples/Textures/Prompt");
-        AddBuildMap("shared_asset" + AppConst.ExtName, "*.png", "Assets/LuaFramework/Examples/Textures/Shared");
+        AddBuildMap("UI" + AppConst.ExtName, "*.prefab", "Assets/Resources/UI");
+        AddBuildMap("UI" + AppConst.ExtName, "*.png", "Assets/Resources/UI");
+        AddBuildMap("Model" + AppConst.ExtName, "*.prefab", "Assets/Resources/Model");
+    }
+
+    /// <summary>
+    /// 处理AR使用的图片资源
+    /// </summary>
+    static void HandleARTexture()
+    {
+        string outPath = AppDataPath + "/" + AppConst.AssetDir + "/" + AppConst.ARAssetDir +"/";
+        string resPath = AppDataPath + "/" + AppConst.ARAssetDir + "/";
+        
+        if (!Directory.Exists(outPath)) Directory.CreateDirectory(outPath);
+
+        foreach(var file in Directory.GetFiles(resPath, "*", SearchOption.AllDirectories))
+        {
+            if(file.EndsWith(".jpg") || file.EndsWith(".png") || file.EndsWith(".bmp"))
+                File.Copy(file, outPath + Path.GetFileName(file), true);
+        }
     }
 
     /// <summary>
@@ -222,6 +264,7 @@ public class Packager {
 
         FileStream fs = new FileStream(newFilePath, FileMode.CreateNew);
         StreamWriter sw = new StreamWriter(fs);
+        FileInfo fileInfo = null;
         for (int i = 0; i < files.Count; i++) {
             string file = files[i];
             string ext = Path.GetExtension(file);
@@ -229,7 +272,9 @@ public class Packager {
 
             string md5 = Util.md5file(file);
             string value = file.Replace(resPath, string.Empty);
-            sw.WriteLine(value + "|" + md5);
+            fileInfo = new FileInfo(file);
+
+            sw.WriteLine(value + "|" + md5 + "|" + fileInfo.Length);
         }
         sw.Close(); fs.Close();
     }
@@ -302,7 +347,7 @@ public class Packager {
     [MenuItem("LuaFramework/Build Protobuf-lua-gen File")]
     public static void BuildProtobufFile() {
         if (!AppConst.ExampleMode) {
-            UnityEngine.Debug.LogError("若使用编码Protobuf-lua-gen功能，需要自己配置外部环境！！");
+            Debugger.LogError("若使用编码Protobuf-lua-gen功能，需要自己配置外部环境！！");
             return;
         }
         string dir = AppDataPath + "/Lua/3rd/pblua";

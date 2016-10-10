@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections.Generic;
+using System.Collections;
 using LuaInterface;
 
 public class TestPerformance : MonoBehaviour 
@@ -22,8 +22,6 @@ public class TestPerformance : MonoBehaviour
         state.DoFile("TestPerf.lua");        
         state.LuaGC(LuaGCOptions.LUA_GCCOLLECT);
         state.LogGC = false;
-
-        Debug.Log(typeof(List<int>).BaseType);
     }
 
     void ShowTips(string msg, string stackTrace, LogType type)
@@ -32,7 +30,7 @@ public class TestPerformance : MonoBehaviour
         tips += "\r\n";
     }
 
-    void OnApplicationQuit()
+    void OnDestroy()
     {
 #if UNITY_5		
         Application.logMessageReceived -= ShowTips;
@@ -43,8 +41,10 @@ public class TestPerformance : MonoBehaviour
         state = null;
     }
 
+    //int lastFrameCount = 0;
+
     void OnGUI()
-    {        
+    {
         GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 300), tips);
 
         if (GUI.Button(new Rect(50, 50, 120, 45), "Test1"))
@@ -128,51 +128,6 @@ public class TestPerformance : MonoBehaviour
             func.Dispose();
             func = null;  
         }
-        else if (GUI.Button(new Rect(50, 450, 120, 45), "Test5"))
-        {            
-            int[] array = new int[1024];
-
-            for (int i = 0; i < 1024; i++)
-            {
-                array[i] = i;
-            }
-
-            float time = Time.realtimeSinceStartup;
-            int total = 0;
-
-            for (int j = 0; j < 100000; j++)
-            {
-                for (int i = 0; i < 1024; i++)
-                {
-                    total += array[i];
-                }
-            }
-
-            time = Time.realtimeSinceStartup - time;
-            tips = "";
-            Debugger.Log("Array cost time: " + time);
-
-            List<int> list = new List<int>(array);
-            time = Time.realtimeSinceStartup;
-            total = 0;
-
-            for (int j = 0; j < 100000; j++)
-            {
-                for (int i = 0; i < 1024; i++)
-                {
-                    total += list[i];
-                }
-            }
-
-            time = Time.realtimeSinceStartup - time;
-            tips = "";
-            Debugger.Log("Array cost time: " + time);
-
-            LuaFunction func = state.GetFunction("TestTable");
-            func.Call();
-            func.Dispose();
-            func = null;            
-        }
         else if (GUI.Button(new Rect(50, 550, 120, 40), "Test7"))
         {            
             float time = Time.realtimeSinceStartup;
@@ -220,10 +175,6 @@ public class TestPerformance : MonoBehaviour
             func.Call();
             func.Dispose();
             func = null;
-        }
-        else if (GUI.Button(new Rect(250, 250, 120, 40), "Quit"))
-        {
-            Application.Quit();
         }
 
         state.CheckTop();

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Project Name="EscapeRoom.luaprj" Cmd="" Arg="" Dir="" >
+    <Filter Name="Lua" Directory=".\.." >
+        <LuaFile RelativePath=".\..\eventlib.lua" />
+        <LuaFile RelativePath=".\..\events.lua" />
+        <LuaFile RelativePath=".\..\Main.lua" />
+        <Filter Name="3rd" Directory=".\..\3rd" >
+            <Filter Name="cjson" Directory=".\..\3rd\cjson" >
+                <LuaFile RelativePath=".\..\3rd\cjson\json2lua.lua" />
+                <LuaFile RelativePath=".\..\3rd\cjson\lua2json.lua" />
+                <LuaFile RelativePath=".\..\3rd\cjson\test.lua" />
+                <LuaFile RelativePath=".\..\3rd\cjson\util.lua" />
+            </Filter>
+            <Filter Name="luabitop" Directory=".\..\3rd\luabitop" >
+                <LuaFile RelativePath=".\..\3rd\luabitop\bitbench.lua" />
+                <LuaFile RelativePath=".\..\3rd\luabitop\bittest.lua" />
+                <LuaFile RelativePath=".\..\3rd\luabitop\installpath.lua" />
+                <LuaFile RelativePath=".\..\3rd\luabitop\md5test.lua" />
+                <LuaFile RelativePath=".\..\3rd\luabitop\nsievebits.lua" />
+                <Filter Name="doc" Directory=".\..\3rd\luabitop\doc" >
+                    <Filter Name="img" Directory=".\..\3rd\luabitop\doc\img" />
+                </Filter>
+            </Filter>
+            <Filter Name="pbc" Directory=".\..\3rd\pbc" >
+                <LuaFile RelativePath=".\..\3rd\pbc\parser.lua" />
+                <LuaFile RelativePath=".\..\3rd\pbc\protobuf.lua" />
+                <LuaFile RelativePath=".\..\3rd\pbc\test.lua" />
+                <LuaFile RelativePath=".\..\3rd\pbc\test2.lua" />
+                <LuaFile RelativePath=".\..\3rd\pbc\testparser.lua" />
+            </Filter>
+            <Filter Name="pblua" Directory=".\..\3rd\pblua" >
+                <LuaFile RelativePath=".\..\3rd\pblua\login_pb.lua" />
+                <LuaFile RelativePath=".\..\3rd\pblua\person_pb.lua" />
+            </Filter>
+            <Filter Name="sproto" Directory=".\..\3rd\sproto" >
+                <LuaFile RelativePath=".\..\3rd\sproto\print_r.lua" />
+                <LuaFile RelativePath=".\..\3rd\sproto\sproto.lua" />
+                <LuaFile RelativePath=".\..\3rd\sproto\sprotoparser.lua" />
+                <LuaFile RelativePath=".\..\3rd\sproto\test.lua" />
+                <LuaFile RelativePath=".\..\3rd\sproto\testall.lua" />
+                <LuaFile RelativePath=".\..\3rd\sproto\testrpc.lua" />
+            </Filter>
+        </Filter>
+        <Filter Name="EscapeRoom" Directory="." >
+            <LuaFile RelativePath=".\Event.lua" />
+            <LuaFile RelativePath=".\Game.lua" />
+            <LuaFile RelativePath=".\Log.lua" />
+            <LuaFile RelativePath=".\Process.lua" />
+            <Filter Name="Class" Directory=".\Class" >
+                <LuaFile RelativePath=".\Class\BaseCtrl.lua" />
+                <LuaFile RelativePath=".\Class\BaseSample.lua" />
+                <LuaFile RelativePath=".\Class\BaseView.lua" />
+                <LuaFile RelativePath=".\Class\class.lua" />
+            </Filter>
+            <Filter Name="Common" Directory=".\Common" >
+                <LuaFile RelativePath=".\Common\define.lua" />
+                <LuaFile RelativePath=".\Common\functions.lua" />
+                <LuaFile RelativePath=".\Common\List.lua" />
+                <LuaFile RelativePath=".\Common\protocal.lua" />
+                <LuaFile RelativePath=".\Common\time.lua" />
+            </Filter>
+            <Filter Name="Config" Directory=".\Config" >
+                <LuaFile RelativePath=".\Config\ItemConfig.lua" />
+                <LuaFile RelativePath=".\Config\SampleConfig.lua" />
+                <LuaFile RelativePath=".\Config\SectionData.lua" />
+                <LuaFile RelativePath=".\Config\UIConfig.lua" />
+            </Filter>
+            <Filter Name="Logic" Directory=".\Logic" >
+                <LuaFile RelativePath=".\Logic\Network.lua" />
+            </Filter>
+            <Filter Name="Manager" Directory=".\Manager" >
+                <LuaFile RelativePath=".\Manager\CtrlManager.lua" />
+                <LuaFile RelativePath=".\Manager\EventManager.lua" />
+                <LuaFile RelativePath=".\Manager\ItemManager.lua" />
+                <LuaFile RelativePath=".\Manager\LBSManager.lua" />
+                <LuaFile RelativePath=".\Manager\LoadManager.lua" />
+                <LuaFile RelativePath=".\Manager\TimeManager.lua" />
+            </Filter>
+            <Filter Name="Model" Directory=".\Model" >
+                <LuaFile RelativePath=".\Model\BagItemModel.lua" />
+                <LuaFile RelativePath=".\Model\SectionModel.lua" />
+            </Filter>
+            <Filter Name="UI" Directory=".\UI" >
+                <Filter Name="Bag" Directory=".\UI\Bag" >
+                    <LuaFile RelativePath=".\UI\Bag\BagCtrl.lua" />
+                    <LuaFile RelativePath=".\UI\Bag\BagView.lua" />
+                </Filter>
+                <Filter Name="Chat" Directory=".\UI\Chat" >
+                    <LuaFile RelativePath=".\UI\Chat\ChatCtrl.lua" />
+                    <LuaFile RelativePath=".\UI\Chat\ChatModel.lua" />
+                    <LuaFile RelativePath=".\UI\Chat\ChatView.lua" />
+                </Filter>
+                <Filter Name="Common" Directory=".\UI\Common" >
+                    <LuaFile RelativePath=".\UI\Common\BubbleSample.lua" />
+                    <LuaFile RelativePath=".\UI\Common\ItemSample.lua" />
+                </Filter>
+                <Filter Name="Menu" Directory=".\UI\Menu" >
+                    <LuaFile RelativePath=".\UI\Menu\MenuCtrl.lua" />
+                    <LuaFile RelativePath=".\UI\Menu\MenuView.lua" />
+                </Filter>
+                <Filter Name="Prompt" Directory=".\UI\Prompt" >
+                    <LuaFile RelativePath=".\UI\Prompt\PromptCtrl.lua" />
+                    <LuaFile RelativePath=".\UI\Prompt\PromptModel.lua" />
+                    <LuaFile RelativePath=".\UI\Prompt\PromptView.lua" />
+                </Filter>
+                <Filter Name="SelectRole" Directory=".\UI\SelectRole" >
+                    <LuaFile RelativePath=".\UI\SelectRole\SelectRoleCtrl.lua" />
+                    <LuaFile RelativePath=".\UI\SelectRole\SelectRoleView.lua" />
+                </Filter>
+            </Filter>
+        </Filter>
+    </Filter>
+</Project>

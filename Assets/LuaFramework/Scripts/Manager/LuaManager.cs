@@ -55,12 +55,12 @@ namespace LuaFramework {
         /// 初始化加载第三方库
         /// </summary>
         void OpenLibs() {
-            lua.OpenLibs(LuaDLL.luaopen_pb);      
-            lua.OpenLibs(LuaDLL.luaopen_sproto_core);
-            lua.OpenLibs(LuaDLL.luaopen_protobuf_c);
-            lua.OpenLibs(LuaDLL.luaopen_lpeg);
+            lua.OpenLibs(LuaDLL.luaopen_pb);
+            lua.OpenLibs(LuaDLL.luaopen_ffi);
             lua.OpenLibs(LuaDLL.luaopen_bit);
+            lua.OpenLibs(LuaDLL.luaopen_lpeg);
             lua.OpenLibs(LuaDLL.luaopen_socket_core);
+            lua.OpenLibs(LuaDLL.luaopen_cjson_safe);
 
             this.OpenCJson();
         }
@@ -69,13 +69,19 @@ namespace LuaFramework {
         /// 初始化Lua代码加载路径
         /// </summary>
         void InitLuaPath() {
-            if (AppConst.DebugMode) {
+            if (AppConst.DebugMode)
+            {
                 string rootPath = AppConst.FrameworkRoot;
                 lua.AddSearchPath(rootPath + "/Lua");
                 lua.AddSearchPath(rootPath + "/ToLua/Lua");
-            } else {
-                lua.AddSearchPath(Util.DataPath + "lua");
+                lua.AddSearchPath(rootPath + "/Lua/EscapeRoom");
             }
+            else
+            {
+                lua.AddSearchPath(Util.DataPath + "lua");
+                lua.AddSearchPath(Util.DataPath + "lua/escapeRoom");
+            }
+
         }
 
         /// <summary>
@@ -89,9 +95,7 @@ namespace LuaFramework {
                 loader.AddBundle("lua/lua_system_reflection.unity3d");
                 loader.AddBundle("lua/lua_unityengine.unity3d");
                 loader.AddBundle("lua/lua_common.unity3d");
-                loader.AddBundle("lua/lua_logic.unity3d");
-                loader.AddBundle("lua/lua_view.unity3d");
-                loader.AddBundle("lua/lua_controller.unity3d");
+                loader.AddBundle("lua/lua_Logic.unity3d");
                 loader.AddBundle("lua/lua_misc.unity3d");
 
                 loader.AddBundle("lua/lua_protobuf.unity3d");
@@ -100,7 +104,27 @@ namespace LuaFramework {
                 loader.AddBundle("lua/lua_3rd_pbc.unity3d");
                 loader.AddBundle("lua/lua_3rd_pblua.unity3d");
                 loader.AddBundle("lua/lua_3rd_sproto.unity3d");
+
+                //自定义加载
+                loader.AddBundle("lua/lua_chat.unity3d");
+                loader.AddBundle("lua/lua_escaperoom.unity3d");
+                loader.AddBundle("lua/lua_escaperoom_class.unity3d");
+                loader.AddBundle("lua/lua_escaperoom_common.unity3d");
+                loader.AddBundle("lua/lua_escaperoom_config.unity3d");
+                loader.AddBundle("lua/lua_escaperoom_logic.unity3d");
+                loader.AddBundle("lua/lua_escaperoom_model.unity3d");
+                loader.AddBundle("lua/lua_escaperoom_manager.unity3d");
+                loader.AddBundle("lua/lua_escaperoom_ui_chat.unity3d");
             }
+        }
+
+        /// <summary>
+        /// 外部加载Bundle
+        /// </summary>
+        /// <param name="name"></param>
+        public void AddBundle(string name)
+        {
+            loader.AddBundle("lua/" + name + AppConst.ExtName);
         }
 
         public object[] DoFile(string filename) {
@@ -121,7 +145,9 @@ namespace LuaFramework {
         }
 
         public void Close() {
-            loop.Destroy();
+
+            if(loop != null)
+                loop.Destroy();
             loop = null;
 
             lua.Dispose();

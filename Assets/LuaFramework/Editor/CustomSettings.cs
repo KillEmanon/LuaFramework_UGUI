@@ -15,6 +15,7 @@ public static class CustomSettings
     public static string luaDir = FrameworkPath + "/Lua/";
     public static string toluaBaseType = FrameworkPath + "/ToLua/BaseType/";
 	public static string toluaLuaDir = FrameworkPath + "/ToLua/Lua";
+    public static string customLuaDir = Application.dataPath + "/ULua/";
 
     //导出时强制做为静态类的类型(注意customTypeList 还要添加这个类型才能导出)
     //unity 有些类作为sealed class, 其实完全等价于静态类
@@ -111,9 +112,9 @@ public static class CustomSettings
         _GT(typeof(Space)),        
                                            
         _GT(typeof(MeshRenderer)),            
-        _GT(typeof(ParticleEmitter)),
-        _GT(typeof(ParticleRenderer)),
-        _GT(typeof(ParticleAnimator)), 
+        //_GT(typeof(ParticleEmitter)),
+        //_GT(typeof(ParticleRenderer)),
+        //_GT(typeof(ParticleAnimator)), 
                               
         _GT(typeof(BoxCollider)),
         _GT(typeof(MeshCollider)),
@@ -132,12 +133,9 @@ public static class CustomSettings
         _GT(typeof(QualitySettings)),
         _GT(typeof(RenderSettings)),                                                   
         _GT(typeof(BlendWeights)),           
-        _GT(typeof(RenderTexture)),       
-          
-        //for LuaFramework
-        _GT(typeof(RectTransform)),
-        _GT(typeof(Text)),
+        _GT(typeof(RenderTexture)),
 
+        //for LuaFramework
         _GT(typeof(Util)),
         _GT(typeof(AppConst)),
         _GT(typeof(LuaHelper)),
@@ -151,7 +149,34 @@ public static class CustomSettings
         _GT(typeof(TimerManager)),
         _GT(typeof(ThreadManager)),
         _GT(typeof(NetworkManager)),
-        _GT(typeof(ResourceManager)),		  
+        _GT(typeof(ResourceManager)),
+        _GT(typeof(LBSManager)),
+
+        //自定义
+        _GT(typeof(TypeWrap)),
+        _GT(typeof(LuaTool)),
+        _GT(typeof(UIConfig)),
+        _GT(typeof(EventListener)),
+        _GT(typeof(InputHandler)),
+
+        //射线
+        _GT(typeof(RaycastHit)),
+
+        //UGUI
+        _GT(typeof(RectTransform)),
+        _GT(typeof(Image)),
+        _GT(typeof(Text)),
+        _GT(typeof(ContentSizeFitter)),
+        _GT(typeof(InputField)),
+        _GT(typeof(Sprite)),
+        _GT(typeof(Canvas)),
+        _GT(typeof(Button)),
+
+        //EasyAR
+        _GT(typeof(EasyAR.EasyImageTargetBehaviour)),
+        _GT(typeof(EasyAR.CameraDeviceBehaviour)),
+        _GT(typeof(EasyAR.StorageType)),
+        _GT(typeof(EasyAR.ARBuilder)),
     };
 
     public static List<Type> dynamicList = new List<Type>()
